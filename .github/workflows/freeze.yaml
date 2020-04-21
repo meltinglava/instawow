@@ -36,7 +36,7 @@ jobs:
       name: Build binary for Linux
       run: |
         mkdir -p dist
-        pyoxidizer build --target x86_64-unknown-linux-musl --release | \
+        pyoxidizer build --target-triple x86_64-unknown-linux-musl --release | \
           tee >(cp $(tail -n 1 | cut -c 23-) dist/instawow)
     - name: Confirm the binary is working
       run: |
